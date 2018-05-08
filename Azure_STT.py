@@ -1,11 +1,11 @@
-import http.client, urllib.request, urllib.parse, urllib.error, base64, sys, json, os
+import http.client, urllib.request, urllib.parse, urllib.error, base64, sys, json, os, config
 
 def azure():
     with open("temp.wav", 'rb') as fd:
         contents = fd.read()
 
     uri = "/speech/recognition/interactive/cognitiveservices/v1?language=it-IT&format=simple"
-    headers = {'Content-Type': 'audio/wav; codec=audio/pcm; samplerate=16000', 'Ocp-Apim-Subscription-Key': "6d99488177b04ee59344c362c469a05d"}
+    headers = {'Content-Type': 'audio/wav; codec=audio/pcm; samplerate=16000', 'Ocp-Apim-Subscription-Key': config.config("API_LUIS")}
     try:
         params = urllib.parse.urlencode({
         })

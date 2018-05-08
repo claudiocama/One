@@ -20,6 +20,6 @@ def startall():
             entities = []
             for x in parsed_luis["entities"]:
                 entities.append(x)
-            Functions.start_function(intent, entities, music)
+            Functions.start_function(intent, entities)
 
 startall()
