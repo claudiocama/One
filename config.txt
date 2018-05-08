@@ -1,0 +1,4 @@
+#Luis AI API for Microsoft NLP service (get one here: www.luis.ai)
+API_LUIS=""
+#Path for music
+MUSIC_PATH="/Music"

@@ -5,22 +5,18 @@ from TTS import TTS
 import os
 import urllib.request, json
 import threading
+from config import config
 
 
 #2 stringhe
-def start_function(intent, entities, music):
+def start_function(intent, entities):
     if intent == "Sveglia":
         alarm_clock(entities)
         return
     if intent == "Orario":
-        #_thread.start_new_thread(orario, ())
         orario()
         return
     if intent == "Riproduci":
-        #music = threading.Thread(target=riproduci, args=(entities[0]["entity"],))
-        #music.target=riproduci
-        #music.args=(entities[0]["entity"])
-        #music.start()
         riproduci(entities[0]["entity"])
         return
     if intent == "Temperatura_gradi":
@@ -98,7 +94,7 @@ def alarm_clock(entities):
 def alarm(target_time):
     while True:
         if target_time < datetime.datetime.now():
-            playmp3("alarm1.mp3")
+            playmp3(config(MUSIC_PATH)+"alarm1.mp3")
             break
         time.sleep(5)
 
@@ -113,13 +109,13 @@ def orario():
     #tempo_timer
     #tempo_timer-orari
     #timer_orari
-def riproduci(canzone):
-    canzone = canzone.lower()
-    path = os.getcwd() + "/Music/"
+def riproduci(songname):
+    songname = songname.lower()
+    path = os.getcwd() + config(MUSIC_PATH)
     for song in os.listdir(path):
         song_l = song.lower()
-        if canzone in song_l:
-            playmp3("Music/"+song)
+        if songname in song_l:
+            playmp3(config(MUSIC_PATH)+songname)
 
 def temperatura_gradi():
     url = "http://api.openweathermap.org/data/2.5/weather?id=6537344&mode=json&units=metric&APPID=a5ae713dde9cad9023c6a8b27f015d6e"
