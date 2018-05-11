@@ -4,4 +4,5 @@ def config(var):
             if line[0] != "#":
                 config_line = line.split("=")
                 if config_line[0] == var:
-                    return config_line[1]
+                    ret = config_line[1].replace('"','').replace("\n","")
+                    return ret

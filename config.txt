@@ -1,4 +1,6 @@
 #Luis AI API for Microsoft NLP service (get one here: www.luis.ai)
-API_LUIS=""
+API_LUIS="1923743ca1764e85a201c33a98034cbc"
+#STT API Azure (get one here: azure.microsoft.com)
+API_STT="02b80f71dfbf4435a3c433f2a78fa1b3"
 #Path for music
 MUSIC_PATH="/Music"

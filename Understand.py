@@ -1,4 +1,4 @@
-import urllib.request
+import urllib.request, config
 
 
 def luis(comando):
@@ -13,7 +13,7 @@ def luis(comando):
     comando = comando.replace(" ", "%20")
     comando = comando.replace(".", "")
     try:
-        response = urllib.request.urlopen("https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/6ca241bf-cf28-44d8-9c13-d8e1eb1beabb?subscription-key=1923743ca1764e85a201c33a98034cbc&verbose=true&timezoneOffset=0&q="+comando)
+        response = urllib.request.urlopen("https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/6ca241bf-cf28-44d8-9c13-d8e1eb1beabb?subscription-key="+config.config("API_LUIS")+"&verbose=true&timezoneOffset=0&q="+comando)
         data = response.read()
         my_json = data.decode('utf8')
     except Exception as e:

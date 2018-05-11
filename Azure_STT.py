@@ -5,7 +5,7 @@ def azure():
         contents = fd.read()
 
     uri = "/speech/recognition/interactive/cognitiveservices/v1?language=it-IT&format=simple"
-    headers = {'Content-Type': 'audio/wav; codec=audio/pcm; samplerate=16000', 'Ocp-Apim-Subscription-Key': config.config("API_LUIS")}
+    headers = {'Content-Type': 'audio/wav; codec=audio/pcm; samplerate=16000', 'Ocp-Apim-Subscription-Key': config.config("API_STT")}
     try:
         params = urllib.parse.urlencode({
         })
@@ -18,6 +18,6 @@ def azure():
         my_json = data.decode('utf8')
         conn.close()
         os.remove("temp.wav")
+        return my_json
     except Exception as e:
         print(e.args)
-    return my_json

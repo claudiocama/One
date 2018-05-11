@@ -1,5 +1,5 @@
 import pyaudio, wave
-import led
+#import led
 import _thread
 
 def start_recording():
@@ -7,7 +7,7 @@ def start_recording():
     FORMAT = pyaudio.paInt16
     CHANNELS = 2
     RATE = 44100
-    RECORD_SECONDS = 5
+    RECORD_SECONDS = 4
     WAVE_OUTPUT_FILENAME = "temp.wav"
 
     p = pyaudio.PyAudio()
@@ -19,7 +19,7 @@ def start_recording():
                     frames_per_buffer=CHUNK)
 
     print("* recording")
-    _thread.start_new_thread(led.led_sec, (5,))
+#    _thread.start_new_thread(led.led_sec, (5,))
 
     frames = []
 
@@ -28,7 +28,7 @@ def start_recording():
         frames.append(data)
 
     print("* done recording")
-    _thread.start_new_thread(led.blink_sec, (5,))
+#    _thread.start_new_thread(led.blink_sec, (5,))
 
     stream.stop_stream()
     stream.close()

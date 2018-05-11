@@ -18,8 +18,8 @@ def startall():
             print(json.dumps(parsed_luis, indent=2))
             intent = parsed_luis["topScoringIntent"]["intent"]
             entities = []
-            for x in parsed_luis["entities"]:
-                entities.append(x)
+            #for x in parsed_luis["entities"]:
+                #entities.append(x)
             Functions.start_function(intent, entities)
 
 startall()
