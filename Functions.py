@@ -6,29 +6,31 @@ import os
 import urllib.request, json
 import threading
 from config import config
+from Intent import c_intent
 
 
-#2 stringhe
+class c_tasks():
+    def __init__(self):
+        self.tasks = []
+
+def get_tasks():
+    return master_tasks
+
 def start_function(intent, entities):
-    if intent == "Sveglia":
-        alarm_clock(entities)
-        return
-    if intent == "Orario":
-        orario()
-        return
-    if intent == "Riproduci":
-        riproduci(entities[0]["entity"])
-        return
-    if intent == "Temperatura_gradi":
-        temperatura_gradi()
-        return
+    for function in functions_list:
+        if intent == function.__name__:
+            master_tasks.tasks.append(c_intent(intent, entities, function))
+            function(entities)
+        else:
+            pass
 
-def alarm_clock(entities):
+def Sveglia(entities):
     time = datetime.datetime.now()
     numeri = []
     orari = []
     Tempo_timer = []
     timer_orari = []
+    target_time = time
     #if target_time
     dict = {"uno" : 1,"una" : 1, "zero" : 0}
     for entity in entities:
@@ -98,7 +100,7 @@ def alarm(target_time):
             break
         time.sleep(5)
 
-def orario():
+def Orario(entities):
     TTS("Sono le " + str(datetime.datetime.now().hour) + " e " + str(datetime.datetime.now().minute))
 
 
@@ -109,7 +111,8 @@ def orario():
     #tempo_timer
     #tempo_timer-orari
     #timer_orari
-def riproduci(songname):
+def Riproduci(entities):
+    songname = entities[0]["entity"]
     songname = songname.lower()
     path = os.getcwd() + config(MUSIC_PATH)
     for song in os.listdir(path):
@@ -117,10 +120,15 @@ def riproduci(songname):
         if songname in song_l:
             playmp3(config(MUSIC_PATH)+songname)
 
-def temperatura_gradi():
+def Temperatura_gradi(entities):
     url = "http://api.openweathermap.org/data/2.5/weather?id=6537344&mode=json&units=metric&APPID=a5ae713dde9cad9023c6a8b27f015d6e"
     response = urllib.request.urlopen(url)
     output = response.read().decode('utf-8')
     my_json = json.loads(output)
     data = {"temp" : int(my_json.get('main').get('temp')), "humidity" : my_json.get('main').get('humidity'), "sunrise" : datetime.datetime.fromtimestamp(int(my_json.get('sys').get('sunrise'))).strftime('%I:%M %p'), "sunset" : datetime.datetime.fromtimestamp(int(my_json.get('sys').get('sunset'))).strftime('%I:%M %p')}
     TTS("Ci sono " + str(data["temp"]) + " gradi e c'è una percentuale di umidità del " + str(data["humidity"]) + " percento")
+
+
+
+master_tasks = c_tasks()
+functions_list = [Sveglia, Orario, Riproduci, Temperatura_gradi]
