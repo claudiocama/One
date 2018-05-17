@@ -4,7 +4,6 @@ def azure():
     with open("temp.wav", 'rb') as fd:
         contents = fd.read()
 
-    uri = "/speech/recognition/interactive/cognitiveservices/v1?language=it-IT&format=simple"
     headers = {'Content-Type': 'audio/wav; codec=audio/pcm; samplerate=16000', 'Ocp-Apim-Subscription-Key': config.config("API_STT")}
     try:
         params = urllib.parse.urlencode({
