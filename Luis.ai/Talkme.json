@@ -1,0 +1,647 @@
+{
+  "luis_schema_version": "3.0.0",
+  "versionId": "0.1",
+  "name": "Talkme",
+  "desc": "",
+  "culture": "it-it",
+  "intents": [
+    {
+      "name": "None"
+    },
+    {
+      "name": "Orario"
+    },
+    {
+      "name": "Riproduci"
+    },
+    {
+      "name": "Sveglia"
+    },
+    {
+      "name": "Temperatura_gradi"
+    }
+  ],
+  "entities": [
+    {
+      "name": "Canzone",
+      "roles": []
+    },
+    {
+      "name": "Città",
+      "roles": []
+    },
+    {
+      "name": "Numeri",
+      "roles": []
+    },
+    {
+      "name": "Orari",
+      "roles": []
+    },
+    {
+      "name": "Tempo_timer",
+      "roles": []
+    },
+    {
+      "name": "Timer_orari",
+      "roles": []
+    }
+  ],
+  "composites": [],
+  "closedLists": [],
+  "patternAnyEntities": [],
+  "regex_entities": [],
+  "prebuiltEntities": [],
+  "model_features": [],
+  "regex_features": [],
+  "patterns": [],
+  "utterances": [
+    {
+      "text": "a londra che temperatura c'è?",
+      "intent": "Temperatura_gradi",
+      "entities": [
+        {
+          "entity": "Città",
+          "startPos": 2,
+          "endPos": 7
+        }
+      ]
+    },
+    {
+      "text": "a torino quanti gradi ci sono?",
+      "intent": "Temperatura_gradi",
+      "entities": [
+        {
+          "entity": "Città",
+          "startPos": 2,
+          "endPos": 7
+        }
+      ]
+    },
+    {
+      "text": "che ora è?",
+      "intent": "Orario",
+      "entities": []
+    },
+    {
+      "text": "che orario è?",
+      "intent": "Orario",
+      "entities": []
+    },
+    {
+      "text": "che ore sono?",
+      "intent": "Orario",
+      "entities": []
+    },
+    {
+      "text": "che temperatura c'è a milano?",
+      "intent": "Temperatura_gradi",
+      "entities": [
+        {
+          "entity": "Città",
+          "startPos": 22,
+          "endPos": 27
+        }
+      ]
+    },
+    {
+      "text": "che umidità c'è a modena?",
+      "intent": "Temperatura_gradi",
+      "entities": [
+        {
+          "entity": "Città",
+          "startPos": 18,
+          "endPos": 23
+        }
+      ]
+    },
+    {
+      "text": "che umidità c'è?",
+      "intent": "Temperatura_gradi",
+      "entities": []
+    },
+    {
+      "text": "dimmi la temperatura",
+      "intent": "Temperatura_gradi",
+      "entities": []
+    },
+    {
+      "text": "dimmi la temperatura di roma",
+      "intent": "Temperatura_gradi",
+      "entities": [
+        {
+          "entity": "Città",
+          "startPos": 24,
+          "endPos": 27
+        }
+      ]
+    },
+    {
+      "text": "dimmi la temperatura e l'umidità",
+      "intent": "Temperatura_gradi",
+      "entities": []
+    },
+    {
+      "text": "dimmi quanti gradi ci sono",
+      "intent": "Temperatura_gradi",
+      "entities": []
+    },
+    {
+      "text": "dimmi quanti gradi ci sono a new york",
+      "intent": "Temperatura_gradi",
+      "entities": [
+        {
+          "entity": "Città",
+          "startPos": 29,
+          "endPos": 36
+        }
+      ]
+    },
+    {
+      "text": "dimmi temperatura e umidità di venezia",
+      "intent": "Temperatura_gradi",
+      "entities": [
+        {
+          "entity": "Città",
+          "startPos": 31,
+          "endPos": 37
+        }
+      ]
+    },
+    {
+      "text": "imposta una sveglia alle 6 21",
+      "intent": "Sveglia",
+      "entities": [
+        {
+          "entity": "Numeri",
+          "startPos": 27,
+          "endPos": 28
+        },
+        {
+          "entity": "Numeri",
+          "startPos": 25,
+          "endPos": 25
+        }
+      ]
+    },
+    {
+      "text": "imposta una sveglia per le 7 e 30",
+      "intent": "Sveglia",
+      "entities": [
+        {
+          "entity": "Numeri",
+          "startPos": 31,
+          "endPos": 32
+        },
+        {
+          "entity": "Numeri",
+          "startPos": 27,
+          "endPos": 27
+        }
+      ]
+    },
+    {
+      "text": "imposta una sveglia per le cinque ed un quarto",
+      "intent": "Sveglia",
+      "entities": [
+        {
+          "entity": "Orari",
+          "startPos": 34,
+          "endPos": 45
+        },
+        {
+          "entity": "Numeri",
+          "startPos": 27,
+          "endPos": 32
+        }
+      ]
+    },
+    {
+      "text": "imposta una sveglia tra 5 minuti",
+      "intent": "Sveglia",
+      "entities": [
+        {
+          "entity": "Tempo_timer",
+          "startPos": 20,
+          "endPos": 31
+        }
+      ]
+    },
+    {
+      "text": "imposta una sveglia tra un quarto d'ora",
+      "intent": "Sveglia",
+      "entities": [
+        {
+          "entity": "Timer_orari",
+          "startPos": 20,
+          "endPos": 38
+        }
+      ]
+    },
+    {
+      "text": "metti in riproduzione ulisse",
+      "intent": "Riproduci",
+      "entities": [
+        {
+          "entity": "Canzone",
+          "startPos": 22,
+          "endPos": 27
+        }
+      ]
+    },
+    {
+      "text": "metti una sveglia alle 6",
+      "intent": "Sveglia",
+      "entities": [
+        {
+          "entity": "Numeri",
+          "startPos": 23,
+          "endPos": 23
+        }
+      ]
+    },
+    {
+      "text": "metti una sveglia alle 6 e 10",
+      "intent": "Sveglia",
+      "entities": [
+        {
+          "entity": "Numeri",
+          "startPos": 27,
+          "endPos": 28
+        },
+        {
+          "entity": "Numeri",
+          "startPos": 23,
+          "endPos": 23
+        }
+      ]
+    },
+    {
+      "text": "metti una sveglia alle 6 e mezza",
+      "intent": "Sveglia",
+      "entities": [
+        {
+          "entity": "Orari",
+          "startPos": 27,
+          "endPos": 31
+        },
+        {
+          "entity": "Numeri",
+          "startPos": 23,
+          "endPos": 23
+        }
+      ]
+    },
+    {
+      "text": "metti una sveglia fra 5 ore e 30 minuti",
+      "intent": "Sveglia",
+      "entities": [
+        {
+          "entity": "Tempo_timer",
+          "startPos": 18,
+          "endPos": 38
+        }
+      ]
+    },
+    {
+      "text": "metti una sveglia tra 3 quarti d'ora",
+      "intent": "Sveglia",
+      "entities": [
+        {
+          "entity": "Timer_orari",
+          "startPos": 18,
+          "endPos": 35
+        }
+      ]
+    },
+    {
+      "text": "misura la temperatura",
+      "intent": "Temperatura_gradi",
+      "entities": []
+    },
+    {
+      "text": "misura quanti gradi ci sono",
+      "intent": "Temperatura_gradi",
+      "entities": []
+    },
+    {
+      "text": "potresti riprodurre niente canzoni d'amore?",
+      "intent": "Riproduci",
+      "entities": [
+        {
+          "entity": "Canzone",
+          "startPos": 20,
+          "endPos": 41
+        }
+      ]
+    },
+    {
+      "text": "qual è la temperatura?",
+      "intent": "Temperatura_gradi",
+      "entities": []
+    },
+    {
+      "text": "qual è l'ora?",
+      "intent": "Orario",
+      "entities": []
+    },
+    {
+      "text": "qual è l'orario?",
+      "intent": "Orario",
+      "entities": []
+    },
+    {
+      "text": "quanti anni hai?",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "quanti gradi ci sono a londra?",
+      "intent": "Temperatura_gradi",
+      "entities": [
+        {
+          "entity": "Città",
+          "startPos": 23,
+          "endPos": 28
+        }
+      ]
+    },
+    {
+      "text": "quanti gradi ci sono in puglia?",
+      "intent": "Temperatura_gradi",
+      "entities": [
+        {
+          "entity": "Città",
+          "startPos": 24,
+          "endPos": 29
+        }
+      ]
+    },
+    {
+      "text": "quanti gradi ci sono?",
+      "intent": "Temperatura_gradi",
+      "entities": []
+    },
+    {
+      "text": "riproduci certe notti",
+      "intent": "Riproduci",
+      "entities": [
+        {
+          "entity": "Canzone",
+          "startPos": 10,
+          "endPos": 20
+        }
+      ]
+    },
+    {
+      "text": "riproduci incompleti.",
+      "intent": "Riproduci",
+      "entities": [
+        {
+          "entity": "Canzone",
+          "startPos": 10,
+          "endPos": 19
+        }
+      ]
+    },
+    {
+      "text": "riproduci le bimbe piangono",
+      "intent": "Riproduci",
+      "entities": [
+        {
+          "entity": "Canzone",
+          "startPos": 10,
+          "endPos": 26
+        }
+      ]
+    },
+    {
+      "text": "riproduci ulisse",
+      "intent": "Riproduci",
+      "entities": [
+        {
+          "entity": "Canzone",
+          "startPos": 10,
+          "endPos": 15
+        }
+      ]
+    },
+    {
+      "text": "riproduci ulisse.",
+      "intent": "Riproduci",
+      "entities": [
+        {
+          "entity": "Canzone",
+          "startPos": 10,
+          "endPos": 15
+        }
+      ]
+    },
+    {
+      "text": "riproduci volare",
+      "intent": "Riproduci",
+      "entities": [
+        {
+          "entity": "Canzone",
+          "startPos": 10,
+          "endPos": 15
+        }
+      ]
+    },
+    {
+      "text": "suona incompleti.",
+      "intent": "Riproduci",
+      "entities": [
+        {
+          "entity": "Canzone",
+          "startPos": 6,
+          "endPos": 15
+        }
+      ]
+    },
+    {
+      "text": "sveglia alle 10 e tre quarti",
+      "intent": "Sveglia",
+      "entities": [
+        {
+          "entity": "Orari",
+          "startPos": 16,
+          "endPos": 27
+        },
+        {
+          "entity": "Numeri",
+          "startPos": 13,
+          "endPos": 14
+        }
+      ]
+    },
+    {
+      "text": "sveglia alle otto",
+      "intent": "Sveglia",
+      "entities": [
+        {
+          "entity": "Numeri",
+          "startPos": 13,
+          "endPos": 16
+        }
+      ]
+    },
+    {
+      "text": "sveglia fra due ore e 20",
+      "intent": "Sveglia",
+      "entities": [
+        {
+          "entity": "Tempo_timer",
+          "startPos": 8,
+          "endPos": 23
+        }
+      ]
+    },
+    {
+      "text": "svegliami alle 03 e 52",
+      "intent": "Sveglia",
+      "entities": [
+        {
+          "entity": "Numeri",
+          "startPos": 20,
+          "endPos": 21
+        },
+        {
+          "entity": "Numeri",
+          "startPos": 15,
+          "endPos": 16
+        }
+      ]
+    },
+    {
+      "text": "svegliami alle 3 e 33",
+      "intent": "Sveglia",
+      "entities": [
+        {
+          "entity": "Numeri",
+          "startPos": 19,
+          "endPos": 20
+        },
+        {
+          "entity": "Numeri",
+          "startPos": 15,
+          "endPos": 15
+        }
+      ]
+    },
+    {
+      "text": "svegliami alle 3 e 45.",
+      "intent": "Sveglia",
+      "entities": [
+        {
+          "entity": "Numeri",
+          "startPos": 19,
+          "endPos": 20
+        },
+        {
+          "entity": "Numeri",
+          "startPos": 15,
+          "endPos": 15
+        }
+      ]
+    },
+    {
+      "text": "svegliami alle 5 52",
+      "intent": "Sveglia",
+      "entities": [
+        {
+          "entity": "Numeri",
+          "startPos": 17,
+          "endPos": 18
+        },
+        {
+          "entity": "Numeri",
+          "startPos": 15,
+          "endPos": 15
+        }
+      ]
+    },
+    {
+      "text": "svegliami alle otto meno un quarto",
+      "intent": "Sveglia",
+      "entities": [
+        {
+          "entity": "Orari",
+          "startPos": 20,
+          "endPos": 33
+        },
+        {
+          "entity": "Numeri",
+          "startPos": 15,
+          "endPos": 18
+        }
+      ]
+    },
+    {
+      "text": "svegliami alle sette",
+      "intent": "Sveglia",
+      "entities": [
+        {
+          "entity": "Numeri",
+          "startPos": 15,
+          "endPos": 19
+        }
+      ]
+    },
+    {
+      "text": "svegliami all'una",
+      "intent": "Sveglia",
+      "entities": [
+        {
+          "entity": "Numeri",
+          "startPos": 14,
+          "endPos": 16
+        }
+      ]
+    },
+    {
+      "text": "svegliami tra 12 minuti.",
+      "intent": "Sveglia",
+      "entities": [
+        {
+          "entity": "Tempo_timer",
+          "startPos": 10,
+          "endPos": 22
+        }
+      ]
+    },
+    {
+      "text": "svegliami tra 2 ore",
+      "intent": "Sveglia",
+      "entities": [
+        {
+          "entity": "Tempo_timer",
+          "startPos": 10,
+          "endPos": 18
+        }
+      ]
+    },
+    {
+      "text": "svegliami tra 8 ore.",
+      "intent": "Sveglia",
+      "entities": [
+        {
+          "entity": "Tempo_timer",
+          "startPos": 10,
+          "endPos": 18
+        }
+      ]
+    },
+    {
+      "text": "svegliami tra mezz'ora",
+      "intent": "Sveglia",
+      "entities": [
+        {
+          "entity": "Timer_orari",
+          "startPos": 10,
+          "endPos": 21
+        }
+      ]
+    }
+  ]
+}
