@@ -1,4 +1,4 @@
-from playmp3 import playmp3
+from playmp3 import play
 import datetime, time
 import _thread
 from TTS import TTS
@@ -92,11 +92,14 @@ def Sveglia(entities):
     alarm(target_time)
 
 
-
 def alarm(target_time):
+    print("IN")
     while True:
+        print(datetime.datetime.now(),target_time)
         if target_time < datetime.datetime.now():
-            playmp3(config(MUSIC_PATH)+"alarm1.mp3")
+            play(config("MUSIC_PATH")+"alarm1.mp3")
+            print("OK")
+            time.sleep(15)
             break
         time.sleep(5)
 
