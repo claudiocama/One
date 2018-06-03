@@ -137,7 +137,7 @@ def Data(entities):
         giorno = "primo"
     else:
         giorno = str(datetime.datetime.now().day)
-    TTS("Oggi è il " + giorno + mesi[datetime.datetime.now().month] + str(mesi[datetime.datetime.now().year))
+    TTS("Oggi è il " + giorno + " " + mesi[datetime.datetime.now().month] + " " + str(datetime.datetime.now().year))
 
 
 master_tasks = c_tasks()
