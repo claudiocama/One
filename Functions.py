@@ -131,7 +131,14 @@ def Temperatura_gradi(entities):
     data = {"temp" : int(my_json.get('main').get('temp')), "humidity" : my_json.get('main').get('humidity'), "sunrise" : datetime.datetime.fromtimestamp(int(my_json.get('sys').get('sunrise'))).strftime('%I:%M %p'), "sunset" : datetime.datetime.fromtimestamp(int(my_json.get('sys').get('sunset'))).strftime('%I:%M %p')}
     TTS("Ci sono " + str(data["temp"]) + " gradi e c'è una percentuale di umidità del " + str(data["humidity"]) + " percento")
 
+def Data(entities):
+    mesi = {1: "Gennaio", 2: "Febbraio", 3: "Marzo", 4: "Aprile", 5: "Maggio", 6: "Giugno", 7: "Luglio", 8: "Agosto", 9: "Settembre", 10: "Ottobre", 11: "Novembre", 12: "Dicembre", }
+    if datetime.datetime.now().day == 1:
+        giorno = "primo"
+    else:
+        giorno = str(datetime.datetime.now().day)
+    TTS("Oggi è il " + giorno + mesi[datetime.datetime.now().month] + str(mesi[datetime.datetime.now().year))
 
 
 master_tasks = c_tasks()
-functions_list = [Sveglia, Orario, Riproduci, Temperatura_gradi]
+functions_list = [Sveglia, Orario, Riproduci, Temperatura_gradi, Data]
